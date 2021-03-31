@@ -3,7 +3,7 @@ $main-color: black;
 
 @mixin shrinkLabel {
   top: -14px;
-  font-size: 12px;
+  font-size: 1em;
   color: $main-color;
 }
 
@@ -28,7 +28,7 @@ $main-color: black;
       outline: none;
     }
 
-    &:focus ~ .form-input-label {
+    & ~ .form-input-label {
       @include shrinkLabel();
     }
   }
@@ -38,14 +38,21 @@ $main-color: black;
   }
 
   .form-input-label {
+    // @include shrinkLabel();
     color: $sub-color;
-    font-size: 16px;
+    font-size: 1em;
     font-weight: normal;
     position: absolute;
     pointer-events: none;
     left: 5px;
     top: 10px;
     transition: 300ms ease all;
+
+    span {
+      color: $sub-color;
+      margin-left: 0.4em;
+      opacity: 0.7;
+    }
 
     &.shrink {
       @include shrinkLabel();
