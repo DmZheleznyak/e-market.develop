@@ -2,11 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/knitting.svg';
 
+import { auth } from './../../firebase/firebase.utils';
+
 import './header.styles.scss';
 
 const nitь = 'NITЬ';
 
-const Header = () => (
+const Header = ({ currentUser }) => (
     <header className='header'>
         <Link className='logo-container' to='/'>
             <img className='logo' src={logo} alt='logo' />
@@ -19,6 +21,12 @@ const Header = () => (
             <Link className='option' to='/contact'>
                 CONTACT
             </Link>
+            {
+                currentUser ?
+                    <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>
+                :
+                <Link className='option' to='/signin'>SIGN IN</Link>
+            }
         </div>
     </header>
 )

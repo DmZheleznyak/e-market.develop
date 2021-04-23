@@ -2,18 +2,16 @@ import React from 'react';
 
 import './form-input.styles.scss';
 
-const FormInput = ({ handleChange, label, id, ...otherProps }) => 
-{
-    console.log(id)
+const FormInput = ({ handleChange, label, id, ...otherProps }) => {
     return (
         <div className='group'>
-            <input className='form-input' onChange={ handleChange } id={id} {...otherProps} />
+            <input className='form-input' autoComplete={`off`} onChange={ handleChange } id={id} {...otherProps} />
             {
                 label   ?
-                (<label className={`form-input-label`} for={id}>
+                (<label className={`form-input-label`} htmlFor={id}>
                     { label } 
                     {/* <span><i class="fas fa-chevron-circle-down"></i></span> */}
-                    <span><i class="fas fa-long-arrow-alt-down"></i></span>
+                    <span><i className={"fas fa-long-arrow-alt-down"}></i></span>
                 </label>)
                 : null
             }
