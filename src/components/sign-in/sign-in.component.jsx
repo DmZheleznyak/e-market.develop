@@ -16,7 +16,7 @@ class SignIn extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handlChange = this.handlChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     };
 
     handleSubmit(event) {
@@ -28,7 +28,7 @@ class SignIn extends React.Component {
         })
     }
 
-    handlChange(event) {
+    handleChange(event) {
         const { name, value } = event.target
 
         this.setState({ [name]: value })
@@ -44,7 +44,7 @@ class SignIn extends React.Component {
                         name='email'
                         type='email'
                         value={this.state.email}
-                        handleChange={this.handlChange}
+                        handleChange={this.handleChange}
                         label='email'
                         id='id-email'
                         required
@@ -53,7 +53,7 @@ class SignIn extends React.Component {
                         name='password'
                         type='password'
                         value={this.state.password}
-                        handleChange={this.handlChange}
+                        handleChange={this.handleChange}
                         label='password'
                         required
                     />
