@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import logo from '../../assets/knitting.svg';
 
 import { auth } from './../../firebase/firebase.utils';
+
 import CardIcon from './../card-icon/card-icon.component';
 import CartDropdown from './../cart-dropdown/cart-dropdown.component';
 
@@ -19,12 +20,8 @@ const Header = ({ currentUser, hidden }) => (
         </Link>
         <div className='name'>{ nitь }</div>
         <div className='options'>
-            <Link className='option' to='/shop'>
-                SHOP
-            </Link>
-            <Link className='option' to='/contact'>
-                CONTACT
-            </Link>
+            <Link className='option' to='/shop'>SHOP</Link>
+            <Link className='option' to='/contact'>CONTACT</Link>
             {
                 currentUser ?
                     ( <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div> )
